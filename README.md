@@ -1,5 +1,8 @@
 # study-design
 
+[![Structure](https://github.com/crce-ux/study-design/actions/workflows/structure.yml/badge.svg)](https://github.com/crce-ux/study-design/actions/workflows/structure.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 **临床研究课题设计流程（D1–D5）与方案裁决**
 
 把「我有个研究想法」变成一份**经得起追问的方案**。
