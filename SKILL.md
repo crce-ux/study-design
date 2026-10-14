@@ -90,6 +90,27 @@ D1 子假设落地 → D2 样本量估算 → D3 入排与分组 → D4 可行�
 
 ---
 
+## 脚本
+
+随包自带（运行版；开发版与测试在 [`research-workflow`](https://github.com/crce-ux/research-workflow) 的 `scripts/checks/`）：
+
+| 脚本 | 干什么 |
+|---|---|
+| `scripts/check_design.py` | 设计书结构机检：证伪条件 / 乐观保守两套 / 脱落率 / 风险四列 / 伦理与预注册 |
+
+**它只查该有的东西在不在，不查阈值出处的标准对不对、效应量取得合不合理**——语义，人工过。
+
+⚠️ **实测**：作者自己的 TRS_EEG 设计书终稿有 4 处不符（见 `scripts/README.md`）。
+不是误报，是稿子没过自己写的线。
+
+缺某一节时会报**「本次未评」**——规则整条跳过不等于查过且通过。
+
+```bash
+python scripts/check_design.py <设计书.md> --deliverables <03_课题申报/>
+```
+
+---
+
 ## 参考文件
 
 | 文件 | 何时读 |
