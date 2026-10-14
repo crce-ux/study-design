@@ -175,6 +175,7 @@ D1 子假设落地与终点定义 → D2 样本量估算 → D3 入排与分组 
 | 脚本 | 干什么 |
 |---|---|
 | `scripts/check_design.py` | 设计书结构机检：**G1** 证伪条件 · **G2** 乐观/保守两套 · **G3** 脱落率 · **G4** 风险四列 · **G6** 伦理与预注册 · **G7** 疗效阈值有没有写出处（**G5** 可行性数字对比为**软**提示） |
+| `scripts/sample_flow.py` | **样本量 → 需招募 → 可招募，三段数字**。按脱落率给乐观/预期/保守三套；按分组比拆每组；算可招募数与**最保守需求**对比。可招募数不够时退出码 1 |
 
 **它只查该有的东西在不在**——不查出处的标准**对不对**、效应量取得**合不合理**，那是语义，人工过。
 
@@ -189,7 +190,15 @@ D1 子假设落地与终点定义 → D2 样本量估算 → D3 入排与分组 
 
 ```bash
 python scripts/check_design.py <设计书.md> --deliverables <03_课题申报/>
+
+# D2 → D4 的算术：两个数字必须都摆出来
+python scripts/sample_flow.py --need 160 --dropout 0.30 --dropout-range 0.15,0.30
+python scripts/sample_flow.py --need 160 --dropout 0.30 --annual 600 --eligible 0.35 --years 1.5
 ```
+
+> ⭐ `sample_flow.py` 只做「**拿到主分析样本量之后**」的换算。
+> **样本量本身怎么来**（效应量、效能、检验方法）不在这——那是 SAP 的事。
+> ⚠️ D4 的可行性判据是「**可招募数 ≥ 样本量需求**」，缺哪一半都不算算过。
 
 ---
 
@@ -202,6 +211,7 @@ python scripts/check_design.py <设计书.md> --deliverables <03_课题申报/>
 | `references/confounders-and-bias.md` | **D6 复核时**——变量角色分类、控制策略、九步、六类偏倚、最小可辩护控制集 |
 | `references/pitfalls.md` | 方案写完自检时——已知坑 |
 | `references/evidence-mapping.md` | 从证据表生成设计书时——章节 ↔ 证据的对应 |
+| `references/examples.md` | **正反样例**：五节对照——假设节（证伪条件）/ 样本量节（两套）/ 可行性节（两个数字）/ 混杂控制表（变量角色）/ 终点定义（七件事）。开头写着「左边过不了 `check_design.py`」 |
 
 ---
 
