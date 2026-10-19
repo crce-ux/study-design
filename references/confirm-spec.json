@@ -1,0 +1,86 @@
+{
+  "title": "临床研究课题设计 · 前置确认",
+  "intro": "以下事项将决定 D1–D6 的检查重点与交付形态。填写完成后提交，设计据此展开。",
+  "questions": [
+    {
+      "id": "design_type",
+      "type": "radio",
+      "label": "研究类型",
+      "effect": "决定 D1–D5 的检查重点：RCT 查随机化与盲法，观察性研究查混杂与选择偏倚，诊断研究查金标准与验证队列。",
+      "required": true,
+      "options": [
+        {"value": "随机对照试验", "hint": "随机化、盲法、分配隐藏"},
+        {"value": "队列 / 病例对照", "hint": "选择偏倚、混杂、失访"},
+        {"value": "横断面", "hint": "抽样代表性、因果推断限度"},
+        {"value": "诊断准确性", "hint": "金标准、验证队列、阈值"},
+        {"value": "机制 / 生物标志物", "hint": "样本来源、检测方法、多重比较"},
+        {"value": "其他"}
+      ]
+    },
+    {
+      "id": "materials",
+      "type": "radio",
+      "label": "现有材料",
+      "effect": "决定从哪一步开始。只有想法时先补假设与证伪条件；已有初稿时直接做 D6 压测。",
+      "required": true,
+      "options": [
+        {"value": "只有想法"},
+        {"value": "已有方案初稿", "hint": "直接进入 D6 复核"},
+        {"value": "已有数据", "hint": "回头补设计与分析计划"},
+        {"value": "已有预实验", "hint": "效应量可用实测值"}
+      ]
+    },
+    {
+      "id": "endpoint",
+      "type": "radio",
+      "label": "主要终点",
+      "effect": "决定 D1 的写法。已定则做操作化；未定则先做终点定义，再进 D2 样本量。",
+      "required": true,
+      "options": [
+        {"value": "已定，且可操作化"},
+        {"value": "已定，但定义还含糊"},
+        {"value": "未定，有多个候选"},
+        {"value": "未定，需要建议"}
+      ]
+    },
+    {
+      "id": "recruit",
+      "type": "radio",
+      "label": "可招募人数",
+      "effect": "决定 D4 能否做数字对比。给出数字或区间时直接算；未知时先做最小可行版本。",
+      "required": true,
+      "options": [
+        {"value": "已有确定数字"},
+        {"value": "只有粗略估计"},
+        {"value": "未知", "hint": "按最小可行版本处理"}
+      ]
+    },
+    {
+      "id": "purpose",
+      "type": "radio",
+      "label": "本次用途",
+      "effect": "决定篇幅与写作口径。申报类强调立项逻辑，学位论文强调完整性，内部讨论强调可执行性。",
+      "required": true,
+      "options": [
+        {"value": "国自然申报"},
+        {"value": "院内 / 省部级课题"},
+        {"value": "学位论文开题"},
+        {"value": "组内讨论"},
+        {"value": "其他"}
+      ]
+    },
+    {
+      "id": "deliverable",
+      "type": "radio",
+      "label": "本次交付范围",
+      "effect": "决定流程停在何处。未列入的环节本次不执行。",
+      "required": true,
+      "options": [
+        {"value": "只要裁决意见", "hint": "指出问题，不改稿"},
+        {"value": "设计书草案"},
+        {"value": "设计书全文 + 裁决"},
+        {"value": "设计书 + 预注册材料"}
+      ]
+    }
+  ]
+}
